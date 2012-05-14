@@ -1,0 +1,2 @@
+class Categoriesproduct < ActiveRecord::Base
+end

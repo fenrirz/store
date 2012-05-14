@@ -1,0 +1,7 @@
+class ChangeBodyFromArticles < ActiveRecord::Migration
+  def change
+    change_column :articles, :body, :text
+      t.integer :rating
+      t.timestamp
+  end
+end
