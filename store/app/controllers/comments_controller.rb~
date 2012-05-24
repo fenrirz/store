@@ -1,0 +1,14 @@
+class CommentsController < ApplicationController
+
+  def create
+    @comment = Comment.new(params[:comment])
+  
+    if @comment.save
+      redirect_to articles_path
+    else
+      flash[:error] = ''
+      redirect_to :action => :index
+    end
+  end
+
+end

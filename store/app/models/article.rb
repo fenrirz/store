@@ -1,15 +1,12 @@
 class Article < ActiveRecord::Base
 
-  has_many :articles, :dependant => :destroy 
-  has_many :valid_comment
-           :user_id => "article"
-           :condition => "share.include"
+
+  has_many :comments, :dependent => :destroy
   belongs_to :user  
 
-  validates :article, :presence => true,
+  validates :title, :presence => true,
                     :length => {:minimum => 3, :maximum => 254},
-                    :uniqueness => true,
-                    :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
-
+                    :uniqueness => true
+                    
    
 end

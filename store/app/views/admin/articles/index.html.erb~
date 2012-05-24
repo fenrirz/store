@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Admin Index</title>
+</head>
+<body>
+<h3><%= flash[:notice] %></h3>
+<%= link_to "add Article", new_admin_article_path %>
+<h1>List of Article</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Rating</th>
+    <th>Manage</th>  
+  </tr>
+
+    <% @articles.each do |temp| %>
+      <tr>
+        <td><%= temp.title %></td>
+        <td><%= temp.body %></td>
+        <td><%= temp.rating %></td>
+        <td><%= link_to 'Show', admin_article_path(temp.id) %></td>
+        <td><%= link_to 'Edit', edit_admin_article_path(temp.id) %></td>
+        <td><%= link_to 'Delete', admin_article_path(temp.id), :method => :delete %><br></td>
+        
+        
+        <% end %>
+      </tr>    
+</table>
+<%= link_to 'New Article', new_article_path %>
+
+</body>
+</html>

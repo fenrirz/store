@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Article List</title>
+</head>
+<body>
+
+<h1>List of Article</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Rating</th>
+    <th>Manage</th>  
+  </tr>
+
+    <% @articles.each do |temp| %>
+      <tr>
+        <td><%= temp.title %></td>
+        <td><%= temp.body %></td>
+        <td><%= temp.rating %></td>
+        <td><%= link_to 'Show', article_path(temp.id) %></td>
+    <% end %>
+      </tr>    
+</table>
+<%= link_to 'New Article', new_article_path %>
+
+</body>
+</html>
+
+

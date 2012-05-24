@@ -1,6 +1,0 @@
-class AddUserIdToProduct < ActiveRecord::Migration
-  def change
-    add_column :products, :user_id
-    add_column :products, :integer
-  end
-end

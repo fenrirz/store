@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 
-  belongs_to :user
+  belongs_to :user :foreign_key => "user_id"
   has_many :categories, :through => :categoriesproduct
   has_many :categoriesproduct
   scope :price_more_than_1000, where ("price > 1000")

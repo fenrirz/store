@@ -15,7 +15,7 @@ development:
   database: store_development
   pool: 5
   username: root
-  password:"011290"
+  password: "011290"
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: store_test
   pool: 5
   username: root
-  password:"011290"
+  password: "011290"
   socket: /var/run/mysqld/mysqld.sock
 
 production:

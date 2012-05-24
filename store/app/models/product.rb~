@@ -10,4 +10,4 @@ class Product < ActiveRecord::Base
 end
 
 
-Article.rating_is_and_above(rating)
+

@@ -1,0 +1,22 @@
+  Title  :<%= @article.title %><br/>
+  Body   :<%= @article.body %><br />
+  Rating :<%= @article.rating %><br />
+  Comment: <br />
+
+<div id="comments">
+  <%= render :partial => "comments", :locals => {:comments => @comments} %>
+</div><br /><br />
+
+
+<% unless(current_user.nil?)%>
+   <%= form_for @comment, :action =>  "show", :url => comments_path, :remote => do |comment| -%>
+      <%= comment.text_area :content %>
+      <%= comment.hidden_field :article_id, :value => @article.id %>
+      
+
+      <%= submit_tag "comment" %>
+  <% end %>
+<% end %>
+
+<%= link_to "back", admin_articles_path %>
+

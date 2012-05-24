@@ -1,0 +1,5 @@
+<%= form_for @article, :url =>admin_articles_path do |f| %>
+  Title : <br><%= article.text_field :title %><br>
+  Body : <br><%= article.text_area :body %><br>
+  <%= article.submit %>
+<% end %>

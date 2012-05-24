@@ -1,0 +1,10 @@
+
+
+
+<% unless(current_user.nil?)%>
+   <%= form_for @comment, :url => comments_path do |comment| -%>
+      <%= comment.text_area :content %>
+      <%= comment.hidden_field :article_id, :value => @article.id %>
+      <%= submit_tag "comment" %>
+  <% end -%>
+<% end %>
