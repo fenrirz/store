@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final</title>
+  <%= stylesheet_link_tag    "application", "style" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    <h1>Welcome to My Store</h1>
+  </div>
+    <%= raw(welcome_text) %>
+    
+  <div id="menu_nav">
+    <ul>
+      <li>Home</li>
+      <li>Product</li>
+      <li>Article</li>
+      <li>Category</li>
+    </ul>
+  <div>
+ <br class="clear" />
+  <div class="container_12">
+    <div class="grid_4">
+      <div id="profile">
+        <p>Edit Profile</p>
+        <p>Sell a Product</p>
+        <p>Share an Article</p>
+        <p>Log out</p><br/>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<%= yield %>
+
+</body>
+</html>
+
+

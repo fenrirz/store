@@ -1,0 +1,32 @@
+.container{
+  width: 960px;
+  margin: 0 auto;
+}
+
+.clear{
+  clear: both;
+}
+
+
+#header h1{
+  text-align: center;
+  border-bottom: 2px solid black;
+  font-size: 35px;
+}
+
+#menu_nav ul li{
+  float: left;
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: 1%;
+}
+
+#profile p{
+  border: 1px solid black;
+}
+
+.grid_8 #category{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
