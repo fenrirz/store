@@ -11,11 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605022557) do
+ActiveRecord::Schema.define(:version => 20120607062804) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rating"
+    t.integer  "user_id"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categoriesproducts", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,11 +39,20 @@ ActiveRecord::Schema.define(:version => 20120605022557) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "article_id"
   end
 
   create_table "countries", :force => true do |t|
     t.integer  "code"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +67,8 @@ ActiveRecord::Schema.define(:version => 20120605022557) do
     t.string   "address"
     t.integer  "age"
     t.date     "birthday"
+    t.string   "password_hash"
+    t.string   "password_salt"
   end
 
 end

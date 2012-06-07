@@ -1,0 +1,20 @@
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Manage</th>
+  </tr>
+    <% @articles.each do |temp| %>
+  <tr>
+    <td><%= temp.title%></td>
+    <td><%= temp.body%></td>
+    <td><%= link_to 'Show', article_path(temp.id) %></td>
+    <td><%= link_to 'Edit', edit_article_path(temp.id) %></td>
+    <td><%= link_to 'Delete', article_path(temp.id), :method => :delete %></td>
+    <% end %>
+  </tr>
+</table>
+    <%= link_to 'New Article', new_article_path %>
+    
+

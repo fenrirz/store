@@ -1,0 +1,22 @@
+
+  Title  :<br><%= @article.title %><br>
+  Content   :<br><%= @article.body %><br>
+  Comment:<br>
+
+<div id="comments">
+  <% @comments.each do |f| %>
+    <%= f.content %><br />
+  <% end %>
+</div><br /><br />
+
+
+<% unless(current_user.nil?)%>
+   <% form_for @comment, :url => comments_path do |f| -%>
+      <%= f.text_area :comment %>
+      <%= f.hidden_field :article_id, :value => @article.id %>
+      <%= submit_tag "comment" %>
+  <% end -%>
+<% end %>
+
+<%= link_to 'Back', articles_path %>
+
