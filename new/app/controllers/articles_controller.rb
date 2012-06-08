@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  before_filter :require_login, :only => [:new, :create, :edit, :update, :show]
+
+
 
   def index
     @articles = Article.all
@@ -41,6 +44,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     Article.destroy(params[:id])
-    redirect_to articles_path
+    redirect_to articles_path 
   end
+
 end

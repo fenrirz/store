@@ -44,5 +44,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def is_admin
+    if current_user.email == "fenrirzzzzz@gmail.com"
+      true
+    else
+      false
+    end
+  end
+
+
   
 end

@@ -12,6 +12,11 @@ New::Application.routes.draw do
   resources :users  
   resources :articles
   resources :sessions
+  resources :comments
+
+  namespace :admin do
+   resources :articles
+ end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

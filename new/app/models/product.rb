@@ -5,5 +5,5 @@ class Product < ActiveRecord::Base
   has_many :categoriesproducts
 
   scope :price_more_than_1000, where ("price > '1000'")
-  scope :rating_is_and_above, lambda {|time| where("rating >= ?", time)}
+  
 end
