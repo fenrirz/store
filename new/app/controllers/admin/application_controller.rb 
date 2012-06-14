@@ -12,9 +12,16 @@ class Admin::ApplicationController < ApplicationController
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
   end
 
-  
+  def is_admin
+    if current_user.email == "fenrirzzzzz@gmail.com"
+      true
+    else
+      false
+  end
+
+
 end
 
