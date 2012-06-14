@@ -1,0 +1,44 @@
+<h2> Edit User </h2>
+  <%= form_for @user do|f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is Invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_message %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    <%= f.label :birthday %><br />
+    <%= f.date_select(:birthday, :start_year => 1945) %>
+  </p>
+  <p>
+    <%= f.radio_button(:gender, true) %>
+    <%= f.label(:gender, "Male") %>
+    <%= f.radio_button(:gender, false) %>
+    <%= f.label(:gender, "Female") %>
+  </p>
+  <p>
+    <%= f.label :blog %><br />
+    <%= f.text_field :blog %>
+  </p>
+  <p>
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </p>

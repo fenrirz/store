@@ -1,0 +1,16 @@
+<h2 class="Product_list"> List of Product </h2>
+<br class="clear">
+  <table>
+    <% @products.each do|f|%>
+      <tr>
+        <td>Name	:</td>
+        <td><%= f.name %></td>
+      </tr>
+      <tr>
+        <td>Price	:</td>
+        <td><%= f.price %></td>
+      </tr>
+        <td><%= link_to "See More", product_path(product.id) %></td>
+      </tr>
+    <% end %>
+  </table>

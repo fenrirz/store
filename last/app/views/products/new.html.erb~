@@ -1,0 +1,15 @@
+<h2> New Product </h2>
+
+  <%= form_for @product do|f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br />
+  <%= f.label :description %><br />
+  <%= f.text_area :description%><br />
+  <%= f.label :price %><br />
+  <%= f.text_field :price%><br />
+  <%= f.label :weight %><br />
+  <%= f.text_field :weight%><br />
+  <br /><br />
+
+  <%= f.submit "Create"%><%= link_to "Back", products_path %>
+  <% end %>

@@ -1,0 +1,8 @@
+<%= @category.id%><br/>
+<%= @category.name%><br/>
+<% if @category.parent_id==nil %>
+   No Parent Categories<br />
+<% else %>
+   <%= Category.find_by_id(@category.parent_id).name %><br />
+<% end %>
+<%= link_to "Back",admin_categories_path %>

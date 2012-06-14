@@ -1,0 +1,29 @@
+<h2 class="category_head"> List of Categories </h2>
+
+<%= link_to "Add Category", new_admin_category_path %>
+  <div class="category_list grid_8 alpha omega">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Parent Category</th>
+        <th>Manage</th>
+      </tr>
+      <tr>
+        <% @categories.each do|category| %>
+          <td><%= category.name %></td>
+          <td><% if category.parent_id == nil %>
+                -
+              <% else %>
+                <%= Category.find_by_id(category.parent_id).name %>
+              <% end %>
+          </td>
+          <td><%= link_to "Show", admin_category_path(category.id) %> | <%= link_to "Edit", edit_admin_category_path(category.id) %> | <%= link_to "delete", admin_category_path(category.id), confirm:'Are you sure want to delete this category ?',method: :delete %></td>
+      
+      </tr><br>
+      <% end %>
+      
+    </table>
+
+    
+  
+  </div>

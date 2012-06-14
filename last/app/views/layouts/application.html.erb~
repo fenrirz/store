@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Last</title>
+  <%= stylesheet_link_tag    "application", "style" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container_12">
+    <div id="header" class="grid_12"">
+  <h1> Welcome to My Store</h1>
+    </div>
+    <br><br>
+    <div id="menu_nav" class="grid_12">
+      <ul>
+        <li>Home</li>
+        <li>Products</li>
+        <li>Article</li>
+        <% unless current_user.nil? %>
+        <% if current_user.is_admin %>
+          <li><%= link_to "Categories", admin_categories_path %></li>
+        <% end %>
+      <% end %>
+      </ul>
+      <br>
+      <%= raw(welcome_text) %>
+    </div>
+    <br class="clear" /><br><br>
+    <div class="grid_4 alpha omega">
+      <div id="profile">
+       <ul>
+          <% if !current_user.nil? %> 
+          <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+          <% end %>
+          <li><%= link_to "Sell a Product", new_product_path %></li>
+          <li>share an article</li>
+          <% if !current_user.nil? %> 
+          <li><%= link_to "Log Out", log_out_path %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="side_category">
+      </div>
+    </div>
+
+    <div class="grid_8">
+
+        <%= yield %>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+  <h2>User Profile</h2>
+  <p><%= flash[:notice] %></p>
+
+  <table class=show_user>
+    <tr>
+      <td>Name       :</td>
+      <td><%= @user.name %></td>   
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td><%= @user.address %></td>
+    </tr>
+    <tr>
+    <td>Phone Number  :</td>
+    <td><%= @user.phone_number %></td>
+    </tr>
+    <tr>
+      <td>Birthday    :</td>
+      <td><%= @user.birthday %></td>
+    </tr>
+    <tr>
+      <td>Gender      :</td>
+      <td><% if @user.gender== true%>
+        Male
+      <% else %>
+        Female
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Facebook    :</td>
+      <td><%= @user.facebook %></td>
+    </tr>
+    <tr>
+    <td>Blog          :</td>
+    <td><%= @user.blog %></td>
+    </tr>
+  </table>
+
