@@ -9,6 +9,8 @@
   <%= f.text_field :price%><br />
   <%= f.label :weight %><br />
   <%= f.text_field :weight%><br />
+  <%= f.label :category_id  %>
+  : <%= f.select :category_id, @parent_category, { :include_blank => true } %>
   <br /><br />
 
   <%= f.submit "Create"%><%= link_to "Back", products_path %>

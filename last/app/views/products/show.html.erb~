@@ -4,6 +4,6 @@ Name : <%= @product.name %><br/>
 Description : <%= @product.description %><br/>
 Price : <%= @product.price %><br/>
 Weight : <%= @product.weight %><br/>
-
+Category : <%= @product.category.name %><br/>
 
 <%= link_to "Back", products_path%>

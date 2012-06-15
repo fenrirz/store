@@ -1,0 +1,17 @@
+<h2> New Article </h2>
+
+<%= form_for @article do |f| %>
+  <div class="article">
+    <table>
+      <tr>
+        <td><%= f.label :title %></td>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :body %></td>
+        <td><%= f.text_area :body %></td>
+      </tr>
+    </table>
+  </div>
+  <p class="button"><%= submit_tag "Create" %></p>
+<% end %>

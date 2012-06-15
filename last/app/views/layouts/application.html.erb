@@ -15,8 +15,8 @@
     <div id="menu_nav" class="grid_12">
       <ul>
         <li>Home</li>
-        <li>Products</li>
-        <li>Article</li>
+        <li><%= link_to "Products", products_path %></li>
+        <li><%= link_to "Article", articles_path %></li>
         <% unless current_user.nil? %>
         <% if current_user.is_admin %>
           <li><%= link_to "Categories", admin_categories_path %></li>
@@ -32,11 +32,21 @@
        <ul>
           <% if !current_user.nil? %> 
           <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
-          <% end %>
           <li><%= link_to "Sell a Product", new_product_path %></li>
-          <li>share an article</li>
-          <% if !current_user.nil? %> 
+          <li><%= link_to "share an article", new_article_path %></li> 
           <li><%= link_to "Log Out", log_out_path %></li>
+          <% else %>
+          <%= form_tag sessions_path do %> 
+          <li> 
+            <%= label_tag :email %><br /> 
+            <%= text_field_tag :email, params[:email] %> 
+          </li> 
+          <li> 
+            <%= label_tag :password %><br /> 
+            <%= password_field_tag :password %> 
+          </li> 
+          <li class="button"><%= submit_tag "Log In" %></li> 
+          <% end %>
           <% end %>
         </ul>
       </div>

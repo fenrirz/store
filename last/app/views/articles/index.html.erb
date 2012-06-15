@@ -1,0 +1,28 @@
+<h2>Article List</h2>
+
+<table>
+  <% @articles.each do |f| %>
+    <tr>
+      <td>Title	:</td>
+      <td><%= f.title %></td>
+    </tr>
+    <tr>
+      <td>Body	:</td>
+      <td><%= f.body%></td>
+    </tr>
+    <tr>
+      <td><%=  link_to "See More >>", article_path(f.id) %></td>
+    </tr>
+    <tr>
+    <% unless current_user.nil? %>
+    <% if current_user.is_admin %>
+      <td><%= link_to "Edit", edit_article_path(f.id) %></td>
+      <td><%= link_to "Delete", article_path(f.id), confirm: 'Are you sure want to delete this article?', :method=> :destroy %></td>
+    <% end %>
+    <% end %>
+    </tr>
+    
+  <% end %>
+</table>
+  
+  

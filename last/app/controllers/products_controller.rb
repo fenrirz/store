@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   
   def new
     @product = Product.new
+    @parent_category = Category.where(["parent_id IS NOT NULL"]).map{|x| [x.name, x.id ]}
   end
 
   def create
@@ -20,15 +21,25 @@ class ProductsController < ApplicationController
   end
   
   def edit
+    @product = Product.find_by_id(params[:id])
+    @child_category = Category.where(["parent_id IS NOT NULL"]).map{|x| [x.name, x.id ]}
   end
 
   def update
+    if @product.update_attributes(params[:product])
+      flash[:notice]= 'Product was successfully updated'
+      redirect_to products_path
+    else
+      flash[:error]= 'Product was failed to update'
+      render "edit"
+    end
   end
 
   def destroy
   end
 
   def show
+    
     @product = Product.find_by_id(params[:id])
   end
 end

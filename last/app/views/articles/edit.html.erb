@@ -1,0 +1,20 @@
+<h2> Article Update </h2>
+
+<%= form_for @article, :url => articles_path do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :body %></td>
+      <td><%= f.text_area :body %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Update"%></td>
+    </tr>
+  </table>
+  
+<% end %>
+
+  <%= link_to "Back", articles_path %>
