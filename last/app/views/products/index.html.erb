@@ -1,20 +1,17 @@
-<h2 class="Product_list"> List of Product </h2>
+<h2 class="head"> List of Product </h2>
 <br class="clear">
-  <table>
+  <div class="product" >
     <% @products.each do|f|%>
-      <tr>
-        <td>Name	:</td>
-        <td><%= f.name %></td>
-      </tr>
-      <tr>
-        <td>Price	:</td>
-        <td><%= f.price %></td>
-      </tr>
-      <tr>
+      <ul >
+        <li>
+          <p>Name	:<%= f.name %></p>
+          <p>Price	:<%= f.price %></p>
         <% if !current_user.nil? %>
-        <td><%= link_to "See More", product_path(f.id) %></td>
-        <td><%= link_to "Edit", edit_product_path(f.id) %></td>
+        <p><%= link_to "See More", product_path(f.id) %><%= link_to "Edit", edit_product_path(f.id) %></p>
         <% end %>
-      </tr>
+        </li>
     <% end %>
-  </table>
+    </ul>
+  </div>
+
+

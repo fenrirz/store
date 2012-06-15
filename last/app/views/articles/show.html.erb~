@@ -10,3 +10,5 @@
     <td><%= @article.body %></td>	
   </tr>
 </table>
+
+<%= link_to "Articles List", articles_path %>

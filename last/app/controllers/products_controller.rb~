@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   
   def edit
     @product = Product.find_by_id(params[:id])
-    @parent_category = Category.where(["parent_id IS NOT NULL"]).map{|x| [x.name, x.id ]}
+    @child_category = Category.where(["parent_id IS NOT NULL"]).map{|x| [x.name, x.id ]}
   end
 
   def update
@@ -36,6 +36,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find_by_id(params[:id])
+    @product.destroy
+    redirect_to products_path
   end
 
   def show

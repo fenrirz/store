@@ -1,4 +1,4 @@
-<h2 class="head">Update Category</h2>
+<h1>Update Category</h1>
 
 <%= form_for @category, :url => admin_category_path do|f| %>
  <table >

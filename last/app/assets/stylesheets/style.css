@@ -72,9 +72,21 @@
   border-bottom: 2px solid silver;
 }
 
-.article_list{
+.head{
   border-top: 2px solid silver;
   border-bottom: 2px solid silver;
 }
 
+.product li{
+  width: 150px;
+  border: 2px solid black;
+  float: left;
+  list-style-type: none;
+  margin: 0px;
+  padding-right: 30px;
+}
 
+.article_index {
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+}

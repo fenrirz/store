@@ -1,4 +1,4 @@
-<h2> New Product </h2>
+<h2 class="head"> New Product </h2>
 
   <%= form_for @product do|f| %>
   <%= f.label :name %><br />
@@ -10,7 +10,7 @@
   <%= f.label :weight %><br />
   <%= f.text_field :weight%><br />
   <%= f.label :category_id  %>
-  : <%= f.select :category_id, @child_category, { :include_blank => true } %>
+  <%= f.select :category_id, @child_category, { :include_blank => false } %>
   <br /><br />
 
   <%= f.submit "Create"%><%= link_to "Back", products_path %>

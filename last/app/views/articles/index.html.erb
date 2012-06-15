@@ -1,6 +1,7 @@
-<h2>Article List</h2>
+<h2 class="head">Article List</h2>
 
 <table>
+  <tr>
   <% @articles.each do |f| %>
     <tr>
       <td>Title	:</td>
@@ -8,12 +9,12 @@
     </tr>
     <tr>
       <td>Body	:</td>
-      <td><%= f.body%></td>
+      <td><%= truncate(f.body, :length => 60) %></td>
     </tr>
     <tr>
       <td><%=  link_to "See More >>", article_path(f.id) %></td>
     </tr>
-    <tr>
+    <tr class="article_index">
     <% unless current_user.nil? %>
     <% if current_user.is_admin %>
       <td><%= link_to "Edit", edit_article_path(f.id) %></td>
@@ -21,7 +22,7 @@
     <% end %>
     <% end %>
     </tr>
-    
+  </tr>  
   <% end %>
 </table>
   

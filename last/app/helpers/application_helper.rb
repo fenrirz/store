@@ -6,8 +6,8 @@ module ApplicationHelper
       str = "Welcome, #{current_user.email}  "
       #str += link_to "Logout", log_out_path
     else
-      str = "#{link_to "Login", log_in_path} | "
-      str += link_to "Signup", sign_up_path
+      #str = "#{link_to "Login", home_index_path} | "
+      #str += link_to "Signup", sign_up_path
     end
   end
 

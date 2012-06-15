@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <td><%= f.label :category %></td>
-      <td>: <%= f.select :category_id, @parent_category, { :include_blank => false } %></td>
+      <td>: <%= f.select :category_id, @child_category, { :include_blank => false } %></td>
     </tr>
     <tr>
       <td><%= f.submit "Update" %></td>

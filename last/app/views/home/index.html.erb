@@ -1,0 +1,34 @@
+<h2 class="head"> List of Products </h2>
+<br class="clear">
+
+<div class="product" >
+    <% @products.each do|f|%>
+      <ul >
+        <li>
+          <p>Name	:<%= f.name %></p>
+          <p>Price	:<%= f.price %></p>
+        <% if !current_user.nil? %>
+        <p><%= link_to "See More", product_path(f.id) %><%= link_to "Edit", edit_product_path(f.id) %></p>
+        <% end %>
+        </li>
+    <% end %>
+    </ul>
+  </div>
+
+<br class="clear"><br />
+
+<h2 class="head"> List of Articles </h2>
+
+<table >
+    <% @articles.each do|f| %>
+    <tr >
+      <td> Tittle :</td><br />
+      <td><%= f.title %></td>
+    </tr>
+    <tr class="article_index">
+      <td> Body    :</td><br />
+      <td><%= truncate(f.body, :length => 50) %></td>
+      <td><%= link_to "See More >>", article_path(f.id) %></td>
+    </tr>
+    <% end %>
+</table>
