@@ -52,14 +52,10 @@
         </ul>
       </div>
       <div class="side_category">
-        <ul>
-          <% category.where([parent_id IS NULL]).each do |f| %>
-          <li><%= f.name %></li>
-            <ul>
-              <% category.where(parent_id=?, parent_category.id).each do |f| %>
-              <li><%= f.name %></li>
-            </ul>
-        </ul>
+        <% if current_user %>
+        <p>List Category</p>
+        <%= raw(list_categories) %>
+      <% end %>
       </div>
     </div>
 

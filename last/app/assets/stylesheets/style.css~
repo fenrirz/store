@@ -72,7 +72,7 @@
   border-bottom: 2px solid silver;
 }
 
-.article_head{
+.head{
   border-top: 2px solid silver;
   border-bottom: 2px solid silver;
 }
@@ -89,4 +89,10 @@
 .article_index {
   border-bottom: 2px solid black;
   margin-bottom: 5px;
+}
+
+.side_category {
+  border: 2px solid black;
+  list-style-type: none;
+  margin: none;
 }

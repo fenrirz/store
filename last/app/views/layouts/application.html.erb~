@@ -52,9 +52,9 @@
         </ul>
       </div>
       <div class="side_category">
-        
-          
-        </ul>
+        <% if current_user %>
+        <p>List Category</p>
+        <%= raw(list_categories) %>
       </div>
     </div>
 
